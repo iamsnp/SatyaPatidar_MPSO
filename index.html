@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Roadmap: Officer Welfare & Reforms 2025-2028</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F0F9FF; /* Sky 50 */
+            color: #003359; /* Blue 900 */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        /* Custom timeline line */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 4px;
+            background: #003359; /* Blue 500 */
+            border-radius: 2px;
+        }
+        @media (min-width: 768px) {
+            .timeline-line::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+    <!-- Chosen Palette: Brilliant Blues & Electric Growth (Primary: Blue-900/Blue-600, Accent: Lime-500/Sky-400) -->
+    <!-- Application Structure Plan: 
+         1. Hero Section: High-impact title and core mission statement.
+         2. Principles Grid: 4-column layout establishing the ethical foundation.
+         3. Strategic Pillars: 8-card grid visualizing the scope of reform.
+         4. Data Spotlight (Career Progression): A focused section with a Chart.js Bar Chart comparing promotion timelines to show the "acceleration" benefit.
+         5. Key Commitments: Categorized cards (Medical, Housing, BD, Finance) breaking down text-heavy commitments into digestible points.
+         6. Execution Roadmap: A vertical timeline showing the phased rollout (Foundation -> Build -> Audit).
+         7. Governance Dashboard: Visualizing the accountability cycles.
+         Structure chosen to guide user from abstract values -> specific areas -> quantitative benefits -> timeline of delivery.
+    -->
+    <!-- Visualization & Content Choices:
+         - Career Progression: Grouped Bar Chart. Goal: Compare/Change. Justification: Visually demonstrates the 1-year reduction in eligibility, making the benefit concrete. Library: Chart.js.
+         - Timeline: Vertical CSS Layout. Goal: Change/Process. Justification: Clearly maps out the fiscal year progression.
+         - Pillars/Principles: Icon Grids. Goal: Organize. Justification: Breaks down complex lists into scannable chunks.
+         - Icons: Unicode/CSS shapes. Justification: NO SVG allowed.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="antialiased">
+
+    <!-- Hero Section -->
+
+    
+    <div class="bg-gradient-to-br from-blue-900 to-blue-700 text-white pb-20 pt-12 rounded-b-[3rem] shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <img
+      src="./Image (1).png"
+      alt="candidate"
+      class="hidden md:block absolute top-6 right-6 w-36 lg:w-48 xl:w-56 rounded-xl shadow-2xl ring-2 ring-white/lt="candidate"
+        class="w-28 rounded-xl shadow-2xl ring-2 ring-white/20 object-cover"
+     ne-block py-1 px-3 rounded-full bg-orange-400 text-blue-900 font-bold text-sm tracking-wider mb-4 shadow-lg">
+            <span class="inline-block py-1 px-3 rounded-full bg-orange-400 text-blue-900 font-bold text-sm tracking-wider mb-4 shadow-lg">VISION 2025–2028</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+                Officer Welfare & <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-lime-300">Organizational Reforms</span>
+            </h1>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto font-light">
+                With Integrity as our foundation and Duty as our guide, we promise balanced representation and unwavering assurance for every officer.
+            </p>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16">
+        
+        <!-- Guiding Principles Cards -->
+        <section class="mb-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Integrity -->
+                <div class="bg-white rounded-2xl shadow-xl p-6 border-t-8 border-lime-500 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-4xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Integrity</h3>
+                    <p class="text-gray-600 text-sm">We strive towards unwavering accountability and transparency in all the officers association decisions and 
+                        continuous dialogue with all the stakeholders.</p>
+                </div>
+                <!-- Duty -->
+                <div class="bg-white rounded-2xl shadow-xl p-6 border-t-8 border-sky-500 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-4xl mb-4">🫡</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Duty</h3>
+                    <p class="text-gray-600 text-sm">With dignity and dedication, upholding professional respect for every officer.</p>
+                </div>
+                <!-- Balance -->
+                <div class="bg-white rounded-2xl shadow-xl p-6 border-t-8 border-lime-500 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-4xl mb-4">⚖️</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Balance</h3>
+                    <p class="text-gray-600 text-sm">We believe in harmonizing organizational goals without compromizing officers welfare.</p>
+                </div>
+                <!-- Assurance -->
+                <div class="bg-white rounded-2xl shadow-xl p-6 border-t-8 border-sky-500 hover:-translate-y-2 transition-transform duration-300">
+                    <div class="text-4xl mb-4">⏱️</div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Assurance</h3>
+                    <p class="text-gray-600 text-sm"> Our Commitment to timely execution of essential welfare policies with measurable and verifiable outcomes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Commitments -->
+        <section class="mb-24">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 text-center mb-12">Key Policy Commitments</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Medical -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-[6px] border-lime-500">
+                    <div class="flex items-center gap-4 mb-6 border-b border-gray-100 pb-4">
+                        <div class="bg-lime-100 p-3 rounded-full text-2xl">🏥</div>
+                        <h3 class="text-2xl font-bold text-blue-900">Medical & Wellbeing</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start text-gray-700"><span class="text-lime-500 mr-2 mt-1">●</span> Parity for parental income dependency coverage.</li>
+                        <li class="flex items-start text-gray-700"><span class="text-lime-500 mr-2 mt-1">●</span> Review the list of exempted(non-admissible) medicines.</li>
+                        <li class="flex items-start text-gray-700"><span class="text-lime-500 mr-2 mt-1">●</span> Expansion of regional hospital nominations.</li>
+                        <li class="flex items-start text-gray-700"><span class="text-lime-500 mr-2 mt-1">●</span> Regular health and stress-management talks by experts.</li>
+                    </ul>
+                </div>
+
+                <!-- Housing -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-[6px] border-sky-500">
+                    <div class="flex items-center gap-4 mb-6 border-b border-gray-100 pb-4">
+                        <div class="bg-sky-100 p-3 rounded-full text-2xl">🏠</div>
+                        <h3 class="text-2xl font-bold text-blue-900">Company Quarters & Transit Accomodation</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start text-gray-700"><span class="text-sky-500 mr-2 mt-1">●</span> Uniform quarter allotment policy based on seniority.</li>
+                        <li class="flex items-start text-gray-700"><span class="text-sky-500 mr-2 mt-1">●</span> Major renovations, better hygiene and CCTV installation for safety.</li>
+                        <li class="flex items-start text-gray-700"><span class="text-sky-500 mr-2 mt-1">●</span> Transparent parking & utility rationalization.</li>
+                        <li class="flex items-start text-gray-700"><span class="text-sky-500 mr-2 mt-1">●</span> Upgraded recreation rooms & sports calendar.</li>
+                    </ul>
+                </div>
+
+                <!-- BD -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-[6px] border-sky-500">
+                    <div class="flex items-center gap-4 mb-6 border-b border-gray-100 pb-4">
+                        <div class="bg-sky-100 p-3 rounded-full text-2xl">👩‍💻</div>
+                        <h3 class="text-2xl font-bold text-blue-900">Workspace Enhancement</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start text-gray-700"><span class="text-sky-500 mr-2 mt-1">●</span> Organized and improved parking facilities.</li>
+                        <li class="flex items-start text-gray-700"><span class="text-sky-500 mr-2 mt-1">●</span> Better sitting space with improved amenities for officers.</li>
+                        <li class="flex items-start text-gray-700"><span class="text-sky-500 mr-2 mt-1">●</span> Welcome kit with essentials promoting IOCL's brand to new joinees.</li>
+                        <li class="flex items-start text-gray-700"><span class="text-sky-500 mr-2 mt-1">●</span> HR and IS handbook on transfer/posting.</li>
+                    </ul>
+                </div>
+
+                <!-- Finance -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-[6px] border-lime-500">
+                    <div class="flex items-center gap-4 mb-6 border-b border-gray-100 pb-4">
+                        <div class="bg-lime-100 p-3 rounded-full text-2xl">💰</div>
+                        <h3 class="text-2xl font-bold text-blue-900">Policy & Finance</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start text-gray-700"><span class="text-lime-500 mr-2 mt-1">●</span> Timely mini-LTS settlement & 4th PRC implementation.</li>
+                        <li class="flex items-start text-gray-700"><span class="text-lime-500 mr-2 mt-1">●</span> Review PRMS to reduce contribution burden.</li>
+                        <li class="flex items-start text-gray-700"><span class="text-lime-500 mr-2 mt-1">●</span> Trasfer requests consideration for spouse working in other PSUs.</li>
+                        <li class="flex items-start text-gray-700"><span class="text-lime-500 mr-2 mt-1">●</span> Simplification of HBA(transparent and Online) & time reduction for the 2nd HBA.</li>
+                        <li class="flex items-start text-gray-700"><span class="text-lime-500 mr-2 mt-1">●</span> Local imprest voucher processing.</li>
+                    </ul>
+                </div>
+
+                <!-- Skill development -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-[6px] border-lime-500">
+                    <div class="flex items-center gap-4 mb-6 border-b border-gray-100 pb-4">
+                        <div class="bg-lime-100 p-3 rounded-full text-2xl">🎓</div>
+                        <h3 class="text-2xl font-bold text-blue-900">Employee Professional Growth </h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start text-gray-700"><span class="text-lime-500 mr-2 mt-1">●</span> IT security and digital technologies trainings and workshops.</li>
+                        <li class="flex items-start text-gray-700"><span class="text-lime-500 mr-2 mt-1">●</span> Workshops on financial literacy. </li>
+                        <li class="flex items-start text-gray-700"><span class="text-lime-500 mr-2 mt-1">●</span> Team-building and cohesive working programs.</li>
+                        <li class="flex items-start text-gray-700"><span class="text-lime-500 mr-2 mt-1">●</span> Soft-skills and emotional intelligence enhancement initiatives.</li>
+                    </ul>
+                </div>
+
+                <!-- Holistic well-being -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-[6px] border-sky-500">
+                    <div class="flex items-center gap-4 mb-6 border-b border-gray-100 pb-4">
+                        <div class="bg-sky-100 p-3 rounded-full text-2xl">🤝</div>
+                        <h3 class="text-2xl font-bold text-blue-900">Holistic Well-being</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start text-gray-700"><span class="text-lime-500 mr-2 mt-1">●</span> Greivance redressal channels.</li>
+                        <li class="flex items-start text-gray-700"><span class="text-lime-500 mr-2 mt-1">●</span> Regular meetings and personalized discussions with officers concerning any issues. </li>
+                        <li class="flex items-start text-gray-700"><span class="text-lime-500 mr-2 mt-1">●</span> Extra-curricular activities and events.</li>
+                        <li class="flex items-start text-gray-700"><span class="text-lime-500 mr-2 mt-1">●</span> Soft-skills and emotional intelligence enhancement initiatives.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Strategic Pillars -->
+        <section class="mb-24">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900">The 8 Strategic Pillars</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Our roadmap is executed across eight distinct functional pillars to ensure comprehensive and holistic reform.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                <div class="bg-blue-50 p-6 rounded-xl text-center hover:bg-white hover:shadow-lg transition border border-blue-100">
+                    <div class="text-3xl mb-2">📜</div>
+                    <h4 class="font-bold text-blue-800">Policy & Welfare</h4>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl text-center hover:bg-white hover:shadow-lg transition border border-blue-100">
+                    <div class="text-3xl mb-2">🏥</div>
+                    <h4 class="font-bold text-blue-800">Medical & Wellbeing</h4>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl text-center hover:bg-white hover:shadow-lg transition border border-blue-100">
+                    <div class="text-3xl mb-2">⛱️</div>
+                    <h4 class="font-bold text-blue-800">Leave & Flexibility</h4>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl text-center hover:bg-white hover:shadow-lg transition border border-blue-100">
+                    <div class="text-3xl mb-2">📈</div>
+                    <h4 class="font-bold text-blue-800">Career Progression</h4>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl text-center hover:bg-white hover:shadow-lg transition border border-blue-100">
+                    <div class="text-3xl mb-2">🏙️</div>
+                    <h4 class="font-bold text-blue-800">Housing & Township</h4>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl text-center hover:bg-white hover:shadow-lg transition border border-blue-100">
+                    <div class="text-3xl mb-2">🤝</div>
+                    <h4 class="font-bold text-blue-800">Cohesion & Collaboration</h4>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl text-center hover:bg-white hover:shadow-lg transition border border-blue-100">
+                    <div class="text-3xl mb-2">💻</div>
+                    <h4 class="font-bold text-blue-800">Digital Reforms</h4>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl text-center hover:bg-white hover:shadow-lg transition border border-blue-100">
+                    <div class="text-3xl mb-2">📢</div>
+                    <h4 class="font-bold text-blue-800">Transparency</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deep Dive: Career Progression (Chart) -->
+        <section class="mb-24 bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
+            <div class="grid grid-cols-1 lg:grid-cols-3">
+                <div class="p-10 bg-blue-900 text-white lg:col-span-1 flex flex-col justify-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 bg-lime-500 rounded-full opacity-20 blur-xl"></div>
+                    <h2 class="text-3xl font-bold mb-6 relative z-10">Accelerating Career Growth</h2>
+                    <p class="text-blue-100 mb-6 relative z-10">
+                        We are committed to relaxing promotion eligibility criteria. The goal is to reduce stagnation and allow talent to rise faster.
+                    </p>
+                    <div class="space-y-4 relative z-10">
+                        <div class="flex items-start">
+                            <span class="text-lime-400 font-bold mr-3">➢</span>
+                            <p class="text-sm"><strong>Streamlined Evaluations:</strong> Replacing e360 with APAR + Counselling.</p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-lime-400 font-bold mr-3">➢</span>
+                            <p class="text-sm"><strong>Faster Transfers:</strong> 30 days for employee, 60 days for family.</p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-lime-400 font-bold mr-3">➢</span>
+                            <p class="text-sm"><strong>Better Q2T:</strong> Enhanced portal with wider hotel options.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-8 lg:p-12 lg:col-span-2 bg-gradient-to-br from-white to-blue-50 flex flex-col items-center justify-center">
+                    <h3 class="text-xl font-bold text-blue-900 mb-6 self-start w-full text-center lg:text-left">Projected Impact: Reduced Eligibility Wait Time</h3>
+                    <div class="chart-container">
+                        <canvas id="promotionChart"></canvas>
+                    </div>
+                    <div class="mt-4 flex items-center justify-center gap-4 text-sm text-gray-500">
+                        <div class="flex items-center"><span class="w-3 h-3 bg-slate-300 rounded-full mr-2"></span> Current Policy</div>
+                        <div class="flex items-center"><span class="w-3 h-3 bg-lime-500 rounded-full mr-2"></span> New Target</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Execution Roadmap Timeline -->
+        <section class="mb-24 relative timeline-line">
+            <div class="text-center mb-16 relative z-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 bg-lime-100 inline-block px-8 py-2 rounded-full">Execution Roadmap</h2>
+            </div>
+            
+            <div class="space-y-12">
+                <!-- Step 1 -->
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between group">
+                    <div class="w-full md:w-5/12 text-center md:text-right px-6">
+                        <h3 class="text-2xl font-bold text-blue-800">Foundation & Priority</h3>
+                        <p class="text-gray-600 mt-2">Formation of cross-functional taskforces. Finalizing PRMS/NPS, Leave Framework, and Transfer Policy updates.</p>
+                    </div>
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center border-4 border-white shadow-xl z-20 my-4 md:my-0 group-hover:bg-lime-500 transition-colors">
+                        <span class="text-white font-bold">FY25</span>
+                    </div>
+                    <div class="w-full md:w-5/12 px-6 text-center md:text-left">
+                        <span class="bg-blue-100 text-blue-800 font-bold px-3 py-1 rounded text-sm">2025-26</span>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between group">
+                    <div class="w-full md:w-5/12 text-center md:text-right px-6 order-1 md:order-1 hidden md:block">
+                        <span class="bg-blue-100 text-blue-800 font-bold px-3 py-1 rounded text-sm">2026-27</span>
+                    </div>
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center border-4 border-white shadow-xl z-20 my-4 md:my-0 order-2 md:order-2 group-hover:bg-lime-500 transition-colors">
+                        <span class="text-white font-bold">FY26</span>
+                    </div>
+                    <div class="w-full md:w-5/12 px-6 text-center md:text-left order-3 md:order-3">
+                        <h3 class="text-2xl font-bold text-blue-800">Infrastructure & Operations</h3>
+                        <p class="text-gray-600 mt-2">Execution of Township upgrades, Hospital expansion, Operationalizing BD-HR mechanism, Uniform Quarter policy.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative z-10 flex flex-col md:flex-row items-center justify-between group">
+                    <div class="w-full md:w-5/12 text-center md:text-right px-6">
+                        <h3 class="text-2xl font-bold text-blue-800">Consolidation & Scale</h3>
+                        <p class="text-gray-600 mt-2">Program consolidation, Impact assessment of all changes, Publication of annual scorecards.</p>
+                    </div>
+                    <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center border-4 border-white shadow-xl z-20 my-4 md:my-0 group-hover:bg-lime-500 transition-colors">
+                        <span class="text-white font-bold">FY27</span>
+                    </div>
+                    <div class="w-full md:w-5/12 px-6 text-center md:text-left">
+                        <span class="bg-blue-100 text-blue-800 font-bold px-3 py-1 rounded text-sm">2027-28</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Governance Section -->
+        <section class="bg-blue-900 text-white rounded-3xl p-8 md:p-16 mb-20 text-center shadow-2xl relative overflow-hidden">
+             <!-- Decor elements -->
+             <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-lime-400 to-sky-400"></div>
+             
+            <h2 class="text-3xl font-bold mb-10">Governance & Accountability Cycle</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                <div class="p-6 bg-blue-800/50 rounded-2xl border border-blue-700 backdrop-blur-sm">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold mb-2 text-lime-400">Monthly</h3>
+                    <p class="text-blue-100 text-sm">Progress dashboards on policy actions and grievance closure rates.</p>
+                </div>
+                <div class="p-6 bg-blue-800/50 rounded-2xl border border-blue-700 backdrop-blur-sm">
+                    <div class="text-4xl mb-4">🗣️</div>
+                    <h3 class="text-xl font-bold mb-2 text-lime-400">Quarterly</h3>
+                    <p class="text-blue-100 text-sm">Open forums (hybrid) and anonymous feedback channels.</p>
+                </div>
+                <div class="p-6 bg-blue-800/50 rounded-2xl border border-blue-700 backdrop-blur-sm">
+                    <div class="text-4xl mb-4">📅</div>
+                    <h3 class="text-xl font-bold mb-2 text-lime-400">Annually</h3>
+                    <p class="text-blue-100 text-sm">Independent audit of promises vs delivery, published to all officers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 pb-12 border-t border-gray-200 pt-8">
+            <h5 class="text-lg font-bold text-blue-900 mb-2">Inclusivity & Equity Statement</h5>
+            <p class="max-w-2xl mx-auto text-sm mb-6 leading-relaxed">
+                This agenda applies uniformly to all officers—BD and non-BD, across all functional units. We are committed to explicit support measures for single parents and non-general shift officers.
+            </p>
+            <p class="text-xs font-semibold">&copy; 2025 Officer Welfare Strategic Committee. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Label Wrapping Helper
+            const wrapLabel = (label, maxLength = 16) => {
+                if (label.length <= maxLength) return label;
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + word).length > maxLength) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            // Tooltip Configuration
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) return label.join(' ');
+                return label;
+            };
+
+            const commonOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { family: "'Poppins', sans-serif", size: 12 },
+                            color: '#1e3a8a',
+                            padding: 20
+                        }
+                    },
+                    tooltip: {
+                        callbacks: { title: tooltipTitleCallback },
+                        titleFont: { family: "'Poppins', sans-serif" },
+                        bodyFont: { family: "'Poppins', sans-serif" },
+                        backgroundColor: 'rgba(30, 58, 138, 0.9)',
+                        padding: 12
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#e2e8f0' },
+                        ticks: { color: '#64748b', font: { family: "'Poppins', sans-serif" } },
+                        title: { display: true, text: 'Years (Calendar)', color: '#94a3b8' }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#1e3a8a', font: { family: "'Poppins', sans-serif", weight: '600' } }
+                    }
+                }
+            };
+
+            // Promotion Chart
+            const ctxPromotion = document.getElementById('promotionChart').getContext('2d');
+            new Chart(ctxPromotion, {
+                type: 'bar',
+                data: {
+                    labels: ['A1 to B Eligibility', 'B to C Eligibility'].map(l => wrapLabel(l)),
+                    datasets: [
+                        {
+                            label: 'Current Policy (Years)',
+                            data: [3, 3],
+                            backgroundColor: '#cbd5e1', // slate-300
+                            hoverBackgroundColor: '#94a3b8',
+                            borderRadius: 4,
+                            barPercentage: 0.6,
+                            categoryPercentage: 0.8
+                        },
+                        {
+                            label: 'New Target (Years)',
+                            data: [2, 2],
+                            backgroundColor: '#84cc16', // lime-500
+                            hoverBackgroundColor: '#65a30d',
+                            borderRadius: 4,
+                            barPercentage: 0.6,
+                            categoryPercentage: 0.8
+                        }
+                    ]
+                },
+                options: commonOptions
+            });
+        });
+    </script>
+</body>
+</html>
